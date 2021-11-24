@@ -3,9 +3,20 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="200" prefWidth="300" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<VBox alignment="TOP_CENTER" prefHeight="200" prefWidth="300" style="-fx-background-color: lightgrey;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <Label fx:id="welcomeText"/>
-      <Button mnemonicParsing="false" text="Gonb" />
+      <TextField fx:id="nevBeviteliMezo" promptText="Add meg a neved" />
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <Label fx:id="eletkorLabel" text="Életkor:" />
+            <Spinner fx:id="eletkorBevitel" editable="true">
+               <valueFactory>
+                  <SpinnerValueFactory.IntegerSpinnerValueFactory amountToStepBy="1" initialValue="20" max="150" min="10" />
+               </valueFactory>
+            </Spinner>
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" onAction="#felvetelClick" text="Felvétel" />
+      <ListView fx:id="emberLista" prefHeight="200.0" prefWidth="200.0" style="-fx-font-family: 'Courier New';"/>
    </children>
 </VBox>
